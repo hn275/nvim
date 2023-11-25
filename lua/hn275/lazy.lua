@@ -29,7 +29,10 @@ require("lazy").setup({
             vim.fn["mkdp#util#install"]()
         end,
     },
-    "nvim-tree/nvim-tree.lua",
+    {
+        "nvim-tree/nvim-tree.lua",
+        cmd = "TSUpdate",
+    },
     "nvim-lualine/lualine.nvim",
     "tpope/vim-fugitive",
     "mattn/emmet-vim",

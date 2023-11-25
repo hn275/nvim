@@ -25,6 +25,12 @@ local highlight_parsers = { -- enabled languages parsers
 	"astro",
 	"go",
     "rust",
+    "dockerfile",
+    "fish",
+    "diff",
+    "csv",
+    "java",
+    "sql",
 }
 
 -- Autotag configs

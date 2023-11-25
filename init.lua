@@ -49,3 +49,4 @@ set colorcolumn=100
 -- Plugins
 require("hn275.lazy")
 require("hn275.lspzero")
+require("hn275.treesitter")
