@@ -48,5 +48,6 @@ require("lazy").setup({
     "hrsh7th/cmp-path",
     "hrsh7th/nvim-cmp",
     "L3MON4D3/LuaSnip", -- snippet engine
-    "saadparwaiz1/cmp_luasnip", -- for luasnip)
+    "saadparwaiz1/cmp_luasnip", -- for luasnip
+    "mhartington/formatter.nvim",
 })
