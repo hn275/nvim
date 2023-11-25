@@ -1,4 +1,5 @@
 require("formatter").setup({
+	logging = false,
 	filetype = {
 		typescriptreact = { require("formatter.filetypes.javascript").prettier },
 		typescript = { require("formatter.filetypes.javascript").prettier },
@@ -14,7 +15,11 @@ require("formatter").setup({
 local autocmd_id = vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	pattern = "*.*",
 	callback = function()
-		vim.cmd("FormatWriteLock")
+		if vim.bo.filetype == "go" then
+			return
+		else
+			vim.cmd("FormatWriteLock")
+		end
 	end,
 })
 
