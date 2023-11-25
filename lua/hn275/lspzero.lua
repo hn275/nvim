@@ -12,7 +12,6 @@ require('mason-lspconfig').setup({
         "jsonnet_ls",
         "bashls",
         "clangd",
-        "ltex",
         "pyright",
         "rust_analyzer",
         "tailwindcss",
@@ -21,7 +20,8 @@ require('mason-lspconfig').setup({
         "astro",
         "svelte",
         "cssls",
-        "typst_lsp",    },
+        "typst_lsp",   
+    },
     handlers = {
         lsp_zero.default_setup,
     },
