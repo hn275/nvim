@@ -1,11 +1,5 @@
 local lsp_zero = require("lsp-zero")
 
-lsp_zero.on_attach(function(client, bufnr)
-	-- see :help lsp-zero-keybindings
-	-- to learn the available actions
-	lsp_zero.default_keymaps({ buffer = bufnr })
-end)
-
 require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {
@@ -26,6 +20,69 @@ require("mason-lspconfig").setup({
 		lsp_zero.default_setup,
 	},
 })
+
+-- keybindings
+local lsp = vim.lsp.buf
+local diag = vim.diagnostic
+local keybindings = {
+	{
+		mode = "n",
+		key = "K",
+		fn = lsp.hover,
+	},
+	{
+		mode = "n",
+		key = "gs",
+		fn = lsp.signature_help,
+	},
+	{
+		mode = "n",
+		key = "ga",
+		fn = lsp.code_action,
+	},
+	{
+		mode = "n",
+		key = "gD",
+		fn = lsp.definition,
+	},
+	{
+		mode = "n",
+		key = "gd",
+		fn = lsp.definition,
+	},
+	{
+		mode = "n",
+		key = "gf",
+		fn = lsp.references,
+	},
+	{
+		mode = "n",
+		key = "ge",
+		fn = diag.open_float,
+	},
+	{
+		mode = "n",
+		key = "gn",
+		fn = diag.goto_next,
+	},
+	{
+		mode = "n",
+		key = "gp",
+		fn = diag.goto_prev,
+	},
+	{
+		mode = "n",
+		key = "<leader>rn",
+		fn = lsp.rename,
+	},
+}
+
+lsp_zero.on_attach(function(_, bufnr)
+	for _, v in ipairs(keybindings) do
+		vim.keymap.set(v.mode, v.key, v.fn, { noremap = true, silent = true, buffer = bufnr })
+	end
+	lsp_zero.default_keymaps({ buffer = bufnr })
+end)
 
 -- lua lsp has to be configed this way to get global vim api
 local lspconfig = require("lspconfig")
