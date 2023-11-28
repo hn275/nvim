@@ -1,25 +1,7 @@
-require("formatter").setup({
-	logging = false,
-	filetype = {
-		typescriptreact = { require("formatter.filetypes.javascript").prettier },
-		typescript = { require("formatter.filetypes.javascript").prettier },
-		javascript = { require("formatter.filetypes.javascript").prettier },
-		javascriptreact = { require("formatter.filetypes.javascript").prettier },
-		svelte = { require("formatter.filetypes.javascript").prettier },
-		go = { require("formatter.filetypes.go").gofmt },
-		rust = { require("formatter.filetypes.rust").rustfmt },
-		lua = { require("formatter.filetypes.lua").stylua },
-	},
-})
-
 local autocmd_id = vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	pattern = "*.*",
 	callback = function()
-		if vim.bo.filetype == "go" then
-			return
-		else
-			vim.cmd("FormatWriteLock")
-		end
+		vim.lsp.buf.format()
 	end,
 })
 
