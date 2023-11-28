@@ -4,35 +4,6 @@ if not treesitter_status then
 	return
 end
 
--- Syntax highlighting configs
-local highlight_parsers = { -- enabled languages parsers
-	"javascript",
-	"typescript",
-	"tsx",
-	"prisma",
-	"json",
-	"http",
-	"html",
-	"bash",
-	"cpp",
-	"css",
-	"lua",
-	"markdown",
-	"python",
-	"scss",
-	"regex",
-	"vim",
-	"astro",
-	"go",
-    "rust",
-    "dockerfile",
-    "fish",
-    "diff",
-    "csv",
-    "java",
-    "sql",
-}
-
 -- Autotag configs
 local autotag_filetypes = { -- enabled file types
 	"html",
@@ -48,7 +19,7 @@ local autotag_filetypes = { -- enabled file types
 }
 
 treesitter.setup({
-	ensure_installed = highlight_parsers, -- install all parsers name
+	auto_install = true,
 	highlight = {
 		enable = true, -- enabling highlight
 	},
