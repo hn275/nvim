@@ -11,11 +11,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " "           -- Make sure to set `mapleader` before lazy so your mappings are correct
+vim.g.mapleader = " "              -- Make sure to set `mapleader` before lazy so your mappings are correct
 require("lazy").setup({
     "nvim-tree/nvim-web-devicons", -- So many plugins require this
-    "nvim-lua/plenary.nvim",    -- Useful lua functions used ny lots of plugins
-    "nvim-lua/popup.nvim",      -- An implementation of the Popup API from vim in Neovim
+    "nvim-lua/plenary.nvim",       -- Useful lua functions used ny lots of plugins
+    "nvim-lua/popup.nvim",         -- An implementation of the Popup API from vim in Neovim
     {
         "lewpoly/sherbet.nvim",
         config = function()
@@ -36,7 +36,14 @@ require("lazy").setup({
     "nvim-lualine/lualine.nvim",
     "tpope/vim-fugitive",
     "mattn/emmet-vim",
-    "nvim-treesitter/nvim-treesitter",
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        event = { "BufReadPost", "BufNewFile" },
+        cmd = { "TSUpdateSync" },
+        config = require("hn275.treesitter")
+
+    },
     "rest-nvim/rest.nvim",
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
