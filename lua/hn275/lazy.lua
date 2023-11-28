@@ -51,4 +51,8 @@ require("lazy").setup({
 	"saadparwaiz1/cmp_luasnip", -- for luasnip
 	"mhartington/formatter.nvim",
 	"ray-x/go.nvim",
+	{
+		"nvimtools/none-ls.nvim",
+		config = require("hn275.null_ls"),
+	},
 })
