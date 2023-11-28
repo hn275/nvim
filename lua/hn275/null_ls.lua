@@ -19,7 +19,7 @@ return function()
 			format.google_java_format,
 			format.markdownlint,
 			format.mdformat,
-			format.prettier_d_slim,
+			format.prettier_d,
 			format.rustfmt,
 			format.sqlformat,
 
