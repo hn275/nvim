@@ -26,8 +26,6 @@ return function()
             code_actions.gomodifytags,
             code_actions.impl,
 
-            completion.spell,
-
             diagnostics.actionlint,
             diagnostics.cppcheck,
             diagnostics.cpplint,
@@ -36,7 +34,6 @@ return function()
             diagnostics.golangci_lint,
             diagnostics.jsonlint,
             diagnostics.markdownlint,
-            diagnostics.misspell,
             diagnostics.mypy,
             diagnostics.pylint,
             diagnostics.tsc,

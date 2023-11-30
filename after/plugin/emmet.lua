@@ -1,5 +1,5 @@
 vim.cmd([[
-let g:user_emmet_mode='i'
+let g:user_emmet_mode='inv'
+let g:user_emmet_install_global = 0
+autocmd FileType javascript,typescript,javascriptreact,typescriptreact,svelte,astro,html EmmetInstall
 ]])
-
-vim.api.nvim_set_keymap("i", "<c-l>", "<c-y>,", { noremap = true, silent = true })
