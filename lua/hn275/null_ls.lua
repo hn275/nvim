@@ -22,14 +22,10 @@ return function()
             format.rustfmt,
             format.sqlformat,
 
-            code_actions.eslint_d,
             code_actions.gomodifytags,
             code_actions.impl,
 
             diagnostics.actionlint,
-            diagnostics.cppcheck,
-            diagnostics.cpplint,
-            diagnostics.eslint_d,
             diagnostics.fish,
             diagnostics.golangci_lint,
             diagnostics.jsonlint,
