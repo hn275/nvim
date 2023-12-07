@@ -15,8 +15,6 @@ return function()
             format.jq,
             format.gofmt,
             format.goimports,
-            format.google_java_format,
-            format.markdownlint,
             format.mdformat,
             format.prettierd,
             format.rustfmt,
@@ -29,12 +27,9 @@ return function()
             diagnostics.fish,
             diagnostics.golangci_lint,
             diagnostics.jsonlint,
-            diagnostics.markdownlint,
             diagnostics.mypy,
             diagnostics.pylint,
             diagnostics.tsc,
-
-            hover.dictionary,
         },
     })
 end
