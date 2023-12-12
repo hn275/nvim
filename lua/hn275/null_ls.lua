@@ -18,7 +18,7 @@ return function()
             format.mdformat,
             format.prettierd,
             format.rustfmt,
-            format.sqlformat,
+            format.beautysh,
 
             code_actions.gomodifytags,
             code_actions.impl,
@@ -27,8 +27,6 @@ return function()
             diagnostics.fish,
             diagnostics.golangci_lint,
             diagnostics.jsonlint,
-            diagnostics.mypy,
-            diagnostics.pylint,
             diagnostics.tsc,
         },
     })
