@@ -45,6 +45,14 @@ set iskeyword+=-
 set colorcolumn=100
 ]])
 
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = {"astro", "javascript", "javascriptreact", "typescript", "typescriptreact", "svelte", "html"},
+	callback = function()
+		vim.o.shiftwidth = 2
+		vim.o.tabstop = 2
+	end,
+})
+
 -- Plugins
 require("hn275.treesitter")
 require("hn275.lazy")
