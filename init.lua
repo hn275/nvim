@@ -58,7 +58,6 @@ require("hn275.keybinds")
 require("hn275.filetypes")
 require("hn275.formatter")
 require("hn275.fold")
-require("hn275.emmet")
 
 -- Plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
