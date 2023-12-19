@@ -1,4 +1,6 @@
-return function()
+    return {
+        "nvimtools/none-ls.nvim",
+        config = function() 
     local n = require("null-ls")
     local code_actions = n.builtins.code_actions
     local format = n.builtins.formatting
@@ -30,4 +32,5 @@ return function()
             diagnostics.tsc,
         },
     })
-end
+        end
+    }

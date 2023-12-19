@@ -46,14 +46,32 @@ set colorcolumn=100
 ]])
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
-	pattern = {"astro", "javascript", "javascriptreact", "typescript", "typescriptreact", "svelte", "html"},
-	callback = function()
-		vim.o.shiftwidth = 2
-		vim.o.tabstop = 2
-	end,
+    pattern = { "astro", "javascript", "javascriptreact", "typescript", "typescriptreact", "svelte", "html" },
+    callback = function()
+        vim.o.shiftwidth = 2
+        vim.o.tabstop = 2
+    end,
 })
 
+vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
+require("hn275.keybinds")
+require("hn275.filetypes")
+require("hn275.formatter")
+require("hn275.fold")
+require("hn275.emmet")
+
 -- Plugins
-require("hn275.treesitter")
-require("hn275.lazy")
-require("hn275.lspzero")
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup("plugins")
