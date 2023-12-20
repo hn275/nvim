@@ -55,7 +55,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     pattern = { "go" },
     group = vim.api.nvim_create_augroup("GoErrHandling", { clear = true }),
     callback = function()
-        k("i", "<C-e>", "err != nil ")
+        k("i", "<C-e>", "err != nil {}<ESC>i<CR><ESC>O")
     end,
 })
 

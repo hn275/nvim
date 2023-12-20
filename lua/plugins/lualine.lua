@@ -113,7 +113,7 @@ return {
 
         status.hide({
             place = { "statusline" }, -- The segment this change applies to.
-            unhide = true,   -- whether to re-enable lualine again/
+            unhide = false,   -- whether to re-enable lualine again/
         })
     end,
 }
