@@ -9,13 +9,11 @@ return {
 
 return {
     "navarasu/onedark.nvim",
-    config = function ()
+    config = function()
         local colortheme = require("onedark")
-        colortheme.setup(
-            {
-                style = "deep"
-            }
-        )
+        colortheme.setup({
+            style = "darker",
+        })
         colortheme.load()
-    end
+    end,
 }
