@@ -54,10 +54,10 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
-require("hn275.keybinds")
-require("hn275.filetypes")
-require("hn275.formatter")
-require("hn275.fold")
+require("user.keybinds")
+require("user.filetypes")
+require("user.formatter")
+require("user.fold")
 
 -- Plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
