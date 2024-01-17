@@ -8,5 +8,6 @@ return {
             return
         end
         ls.add_snippets("typst", require("user.snippets.typst"))
+        ls.add_snippets("rust", require("user.snippets.rust"))
     end,
 }
