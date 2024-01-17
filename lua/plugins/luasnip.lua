@@ -7,7 +7,13 @@ return {
         if not ls_ok then
             return
         end
+
         ls.add_snippets("typst", require("user.snippets.typst"))
         ls.add_snippets("rust", require("user.snippets.rust"))
+
+        local js_commons = require("user.snippets.js_commons")
+        ls.add_snippets("javascript", js_commons)
+        ls.add_snippets("svelte", js_commons)
+        ls.add_snippets("astro", js_commons)
     end,
 }
