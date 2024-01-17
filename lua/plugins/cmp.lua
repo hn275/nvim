@@ -89,8 +89,8 @@ return {
                 format = function(entry, vim_item)
                     vim_item.kind = nil -- no icons
                     vim_item.menu = ({
-                        nvim_lsp = "LSP",
                         luasnip = "SNIP",
+                        nvim_lsp = "LSP",
                         buffer = "BUFF",
                         path = "PATH",
                     })[entry.source.name]
@@ -98,8 +98,8 @@ return {
                 end,
             },
             sources = cmp.config.sources({
-                { name = "nvim_lsp" },
                 { name = "luasnip" },
+                { name = "nvim_lsp" },
                 { name = "buffer" },
                 { name = "path" },
             }),
