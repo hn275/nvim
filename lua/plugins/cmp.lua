@@ -63,7 +63,7 @@ return {
                 end
             end, { "i" }),
             ["<C-p>"] = cmp.mapping(function(callback)
-                if luasnip.change_choice() then
+                if luasnip.choice_active() then
                     luasnip.change_choice(-1)
                 elseif cmp.visible() then
                     cmp.select_prev_item()

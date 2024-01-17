@@ -44,9 +44,6 @@ k("n", "{", "{zz")
 k("n", "}", "}zz")
 k("n", "[m", "[mzz")
 
--- keep paste register
-k("n", "p", '"_dP')
-
 -- Visual Mode --
 -- stay in visual mode while indenting
 k("v", "<", "<gv")
