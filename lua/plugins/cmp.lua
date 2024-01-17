@@ -54,14 +54,18 @@ return {
                 end
             end, { "i" }),
             ["<C-n>"] = cmp.mapping(function(callback)
-                if cmp.visible() then
+                if luasnip.choice_active() then
+                    luasnip.change_choice(1)
+                elseif cmp.visible() then
                     cmp.select_next_item()
                 else
                     callback()
                 end
             end, { "i" }),
             ["<C-p>"] = cmp.mapping(function(callback)
-                if cmp.visible() then
+                if luasnip.change_choice() then
+                    luasnip.change_choice(-1)
+                elseif cmp.visible() then
                     cmp.select_prev_item()
                 else
                     callback()
