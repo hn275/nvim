@@ -21,6 +21,7 @@
             format.prettierd,
             format.rustfmt,
             format.beautysh,
+                    format.taplo,
 
             code_actions.gomodifytags,
             code_actions.impl,
