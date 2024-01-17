@@ -1,15 +1,15 @@
 -- Key map function
 local k = function(mode, lhs, rhs)
-    vim.keymap.set(mode, lhs, rhs, { noremap = true, silent = true })
+	vim.keymap.set(mode, lhs, rhs, { noremap = true, silent = true })
 end
 
 -- Unbinding key
 local normal_keys = {
-    "<C-t>",
-    "ZQ",
+	"<C-t>",
+	"ZQ",
 }
 for _, key in pairs(normal_keys) do
-    k("n", key, "<NOP>")
+	k("n", key, "<NOP>")
 end
 
 -- Do not yank when deleting with x
@@ -44,6 +44,9 @@ k("n", "{", "{zz")
 k("n", "}", "}zz")
 k("n", "[m", "[mzz")
 
+-- keep paste register
+k("n", "p", '"_dP')
+
 -- Visual Mode --
 -- stay in visual mode while indenting
 k("v", "<", "<gv")
@@ -51,12 +54,12 @@ k("v", ">", ">gv")
 
 -- Insert Mode --
 vim.api.nvim_create_autocmd({ "FileType" }, {
-    desc = "Go err handling",
-    pattern = { "go" },
-    group = vim.api.nvim_create_augroup("GoErrHandling", { clear = true }),
-    callback = function()
-        k("i", "<C-e>", "err != nil {}<ESC>i<CR><ESC>O")
-    end,
+	desc = "Go err handling",
+	pattern = { "go" },
+	group = vim.api.nvim_create_augroup("GoErrHandling", { clear = true }),
+	callback = function()
+		k("i", "<C-e>", "err != nil {}<ESC>i<CR><ESC>O")
+	end,
 })
 
 -- Move block of codes around
