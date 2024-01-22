@@ -44,11 +44,12 @@ return {
                 side = "right",
                 adaptive_size = true,
                 relativenumber = true,
+                side = "right",
                 float = {
                     enable = false,
                     quit_on_focus_loss = true,
                     open_win_config = {
-                        relative = "cursor",
+                        relative = "place",
                         border = "single",
                     },
                 },
