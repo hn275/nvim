@@ -36,7 +36,7 @@ vim.o.foldlevelstart = 999  -- always open all folds when entering a file
 vim.o.laststatus = 0
 vim.o.showtabline = 2
 vim.o.compatible = false
-vim.o.mouse = ""
+-- vim.o.mouse = ""
 
 vim.opt.shortmess:append("c")
 
