@@ -10,8 +10,11 @@ local fmt_on_save = function()
         autocmd_id = vim.api.nvim_create_autocmd({ "BufWritePost" }, {
             pattern = "*.*",
             callback = function()
+                if vim.bo.filetype == "typst" then
+                    return
+                end
                 vim.lsp.buf.format()
-                vim.cmd("FormatWrite")
+                -- vim.cmd("FormatWrite")
             end,
         })
         print("AutoFmt on")
