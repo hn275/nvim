@@ -23,6 +23,7 @@
   "plenary.nvim": { "branch": "master", "commit": "4f71c0c4a196ceb656c824a70792f3df3ce6bb6d" },
   "popup.nvim": { "branch": "master", "commit": "b7404d35d5d3548a82149238289fa71f7f6de4ac" },
   "rest.nvim": { "branch": "main", "commit": "2d7bd3d398940ce2692941e6cd052c072207b9f9" },
+  "symbols-outline.nvim": { "branch": "master", "commit": "564ee65dfc9024bdde73a6621820866987cbb256" },
   "telescope.nvim": { "branch": "master", "commit": "7b5c5f56a21e82fdcfe5b250278b8dfc4b1cbab4" },
   "typst.vim": { "branch": "main", "commit": "816ba15885cb5eb742e06bafcd53b1a8531d334b" },
   "vim-fugitive": { "branch": "master", "commit": "e7bf502a6ae492f42a91d231864e25630286319b" }
