@@ -121,5 +121,11 @@ return {
                 },
             },
         })
+
+        lspconfig.clangd.setup({
+            capabilities = {
+                offsetEncoding = "utf-8"
+            }
+        })
     end,
 }
