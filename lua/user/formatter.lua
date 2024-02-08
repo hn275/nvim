@@ -1,6 +1,7 @@
 local autocmd_id = vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     pattern = "*.*",
     callback = function()
+        if vim.bo.filetype == "typst" then return end
         vim.lsp.buf.format()
     end,
 })
