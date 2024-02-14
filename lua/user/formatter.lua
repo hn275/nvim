@@ -11,7 +11,8 @@ local fmt_on_save = function()
         autocmd_id = vim.api.nvim_create_autocmd({ "BufWritePost" }, {
             pattern = "*.*",
             callback = function()
-                if vim.bo.filetype == "typst" then
+                local ft  = vim.bo.filetype
+                if  ft == "typst" or ft == "markdown" then
                     return
                 end
                 vim.lsp.buf.format()
