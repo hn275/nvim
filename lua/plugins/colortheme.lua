@@ -1,4 +1,3 @@
---[[
 return {
 	"lewpoly/sherbet.nvim",
 	config = function()
@@ -6,6 +5,7 @@ return {
 	end,
 }
 
+--[[
 return {
     "navarasu/onedark.nvim",
     config = function()
@@ -36,7 +36,6 @@ return {
 	end,
 }
 
---]]
 return {
     "no-clown-fiesta/no-clown-fiesta.nvim",
     config = function()
@@ -57,3 +56,4 @@ return {
         vim.cmd("colorscheme no-clown-fiesta")
     end
 }
+--]]
