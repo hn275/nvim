@@ -35,7 +35,7 @@ k("n", "gl", "<C-w>l")
 -- quick fold functions
 k("n", "<leader>=", "[mva{zf")
 
--- quick jump but centers the cursor
+--[[ quick jump but centers the cursor
 k("n", "<C-d>", "<C-d>zz")
 k("n", "<C-u>", "<C-u>zz")
 k("n", "<C-f>", "<C-f>zz")
@@ -43,6 +43,7 @@ k("n", "<C-b>", "<C-b>zz")
 k("n", "{", "{zz")
 k("n", "}", "}zz")
 k("n", "[m", "[mzz")
+--]]
 
 -- Visual Mode --
 -- stay in visual mode while indenting
