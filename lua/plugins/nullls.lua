@@ -11,25 +11,14 @@ return {
         n.setup({
             sources = {
                 format.stylua,
-                format.autopep8,
                 format.clang_format,
-                format.fish_indent,
-                format.jq,
                 format.gofmt,
                 format.goimports,
                 format.prettier,
-                format.rustfmt,
-                format.beautysh,
-                format.taplo,
-
-                code_actions.gomodifytags,
-                code_actions.impl,
 
                 diagnostics.actionlint,
                 diagnostics.fish,
                 diagnostics.golangci_lint,
-                diagnostics.jsonlint,
-                diagnostics.tsc,
             },
         })
     end,
