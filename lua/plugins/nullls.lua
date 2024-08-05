@@ -19,6 +19,7 @@ return {
 				format.gofmt,
 				format.goimports,
 				format.prettier,
+                format.black, -- python formatter
 
 				diagnostics.actionlint,
 				diagnostics.fish,
