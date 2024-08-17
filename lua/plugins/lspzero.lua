@@ -128,22 +128,24 @@ return {
             },
         })
 
-lspconfig.rust_analyzer.setup({
- -- Other Configs ...
-  settings = {
-    ["rust-analyzer"] = {
-      -- Other Settings ...
-      procMacro = {
-        ignored = {
-            leptos_macro = {
-                -- optional: --
-                -- "component",
-                "server",
+        lspconfig.rust_analyzer.setup({
+            -- Other Configs ...
+            settings = {
+                ["rust-analyzer"] = {
+                    -- Other Settings ...
+                    procMacro = {
+                        ignored = {
+                            leptos_macro = {
+                                -- optional: --
+                                -- "component",
+                                "server",
+                            },
+                        },
+                    },
+                },
             },
-        },
-      },
-    },
-  }
-})
+        })
+
+        lspconfig.htmx.setup({})
     end,
 }
