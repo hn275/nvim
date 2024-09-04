@@ -41,16 +41,15 @@ return {
                 vim.keymap.set("n", "o", api.node.open.edit, opts("Open: in place"))
             end,
             view = {
-                side = "right",
                 adaptive_size = true,
                 relativenumber = true,
-                side = "right",
+                side = "left",
                 float = {
                     enable = false,
                     quit_on_focus_loss = true,
                     open_win_config = {
                         relative = "place",
-                        border = "single",
+                        border = "double",
                     },
                 },
             },
