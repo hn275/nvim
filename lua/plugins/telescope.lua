@@ -1,71 +1,73 @@
 return {
-    "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-        local has_telescope, telescope = pcall(require, "telescope")
+	"nvim-telescope/telescope.nvim",
+	dependencies = { "nvim-lua/plenary.nvim", "jonarrien/telescope-cmdline.nvim" },
+	config = function()
+		local has_telescope, telescope = pcall(require, "telescope")
 
-        if not has_telescope then
-            print("Telescope not found")
-            return
-        end
+		if not has_telescope then
+			print("Telescope not found")
+			return
+		end
 
-        local actions = require("telescope.actions")
+		local actions = require("telescope.actions")
 
-        THEME = "ivy"
+		THEME = "ivy"
 
-        telescope.setup({
-            defaults = {
-                mappings = {
-                    n = {
-                        ["<Esc>"] = actions.close,
-                    },
-                },
-                layout_strategy = "horizontal",
-                layout_config = {
-                    vertical = { width = 0.5 },
+		telescope.setup({
+			defaults = {
+				mappings = {
+					n = {
+						["<Esc>"] = actions.close,
+					},
+				},
+				layout_strategy = "horizontal",
+				layout_config = {
+					vertical = { width = 0.5 },
 
-                    bottom_pane = {
-                        preview_cutoff = 40,
-                        prompt_position = "top",
-                    },
+					bottom_pane = {
+						preview_cutoff = 40,
+						prompt_position = "top",
+					},
 
-                    cursor = {
-                        height = 0.9,
-                        preview_cutoff = 40,
-                        width = 0.8,
-                    },
-                },
-                prompt_prefix = " > ",
-                path_display = { "truncate" },
-                scroll_strategy = "limit",
-                border = true,
-            },
-            pickers = {
-                live_grep = {
-                    theme = THEME,
-                },
-                find_files = {
-                    theme = THEME,
-                    ignore = false,
-                    hidden = false,
-                },
-                file_browser = {
-                    theme = THEME,
-                },
-                lsp_references = {
-                    theme = THEME,
-                },
-                buffers = {
-                    theme = THEME,
-                },
-            },
-            extensions = {},
-        })
+					cursor = {
+						height = 0.9,
+						preview_cutoff = 40,
+						width = 0.8,
+					},
+				},
+				prompt_prefix = " > ",
+				path_display = { "truncate" },
+				scroll_strategy = "limit",
+				border = true,
+			},
+			pickers = {
+				live_grep = {
+					theme = THEME,
+				},
+				find_files = {
+					theme = THEME,
+					ignore = false,
+					hidden = false,
+				},
+				file_browser = {
+					theme = THEME,
+				},
+				lsp_references = {
+					theme = THEME,
+				},
+				buffers = {
+					theme = THEME,
+				},
+			},
+			extensions = {},
+		})
 
-        local k = vim.keymap.set
-        local t = require("telescope.builtin")
-        vim.keymap.set("n", "<leader>ff", t.find_files)
-        vim.keymap.set("n", "<leader>fg", t.live_grep)
-        k("n", "<leader>fb", t.buffers)
-    end,
+		require("telescope").load_extension("cmdline")
+
+		local t = require("telescope.builtin")
+		vim.keymap.set("n", "<leader>ff", t.find_files)
+		vim.keymap.set("n", "<leader>fg", t.live_grep)
+		vim.keymap.set("n", "<leader>fb", t.buffers)
+		vim.keymap.set("n", ":", "<cmd>Telescope cmdline<cr>")
+	end,
 }
