@@ -1,11 +1,11 @@
 -- Basic vim stuff
 vim.o.backup = false
 vim.o.clipboard = "unnamedplus" -- allow accessing the clipboard for neovim
-vim.o.conceallevel = 0 -- making `` visible in markdown files
+vim.o.conceallevel = 0          -- making `` visible in markdown files
 vim.o.fileencoding = "utf-8"
-vim.o.hlsearch = false -- highlight all matched search
-vim.o.ignorecase = true -- ignore case in search pattern
-vim.o.pumheight = 10 -- pop up menu height
+vim.o.hlsearch = false          -- highlight all matched search
+vim.o.ignorecase = true         -- ignore case in search pattern
+vim.o.pumheight = 10            -- pop up menu height
 vim.o.cmdheight = 1
 vim.o.showcmd = false
 vim.o.showmode = false
@@ -29,10 +29,10 @@ vim.o.number = true
 vim.o.relativenumber = true
 vim.o.wrap = false
 vim.o.numberwidth = 1
-vim.o.signcolumn = "yes:1" -- show sign column when there is a sign
+vim.o.signcolumn = "yes:1"  -- show sign column when there is a sign
 vim.o.foldmethod = "manual" -- setting fold method
-vim.o.foldcolumn = "1" -- dedicated column for fold symbols
-vim.o.foldlevelstart = 999 -- always open all folds when entering a file
+vim.o.foldcolumn = "1"      -- dedicated column for fold symbols
+vim.o.foldlevelstart = 999  -- always open all folds when entering a file
 vim.o.laststatus = 0
 vim.o.showtabline = 2
 vim.o.compatible = false
@@ -66,3 +66,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "typst",
+	callback = function()
+		vim.opt_local.tabstop = 2
+		vim.opt_local.shiftwidth = 2
+	end,
+})
