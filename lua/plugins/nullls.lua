@@ -22,7 +22,6 @@ return {
                 format.black, -- python formatter
 
 				diagnostics.actionlint,
-				diagnostics.fish,
 				diagnostics.golangci_lint,
 			},
 		})
