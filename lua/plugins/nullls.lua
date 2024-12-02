@@ -19,7 +19,8 @@ return {
 				format.gofmt,
 				format.goimports,
 				format.prettier,
-                format.black, -- python formatter
+				format.shfmt,
+				format.black, -- python formatter
 
 				diagnostics.actionlint,
 				diagnostics.golangci_lint,

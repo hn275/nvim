@@ -17,11 +17,7 @@ return {
 				"clangd",
 				"pyright",
 				"rust_analyzer",
-				"tailwindcss",
 				"gopls",
-				"astro",
-				"svelte",
-				"cssls",
 				"typst_lsp",
 			},
 			handlers = {

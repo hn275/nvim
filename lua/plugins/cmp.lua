@@ -123,9 +123,8 @@ return {
 				select = false,
 			},
 
-			experimental = {
-				ghost_text = true,
-			},
+			-- ghost_text = { enable = false },
+			ghost_text = {},
 		})
 	end,
 }
