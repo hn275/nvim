@@ -123,8 +123,7 @@ return {
 				select = false,
 			},
 
-			-- ghost_text = { enable = false },
-			ghost_text = {},
+			ghost_text = { enable = false },
 		})
 	end,
 }
