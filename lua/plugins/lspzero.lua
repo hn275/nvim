@@ -18,7 +18,6 @@ return {
 				"pyright",
 				"rust_analyzer",
 				"gopls",
-				"typst_lsp",
 			},
 			handlers = {
 				lsp_zero.default_setup,
@@ -46,11 +45,6 @@ return {
 			},
 			{
 				mode = "n",
-				key = "gD",
-				fn = lsp.definition,
-			},
-			{
-				mode = "n",
 				key = "gd",
 				fn = lsp.definition,
 			},
@@ -73,6 +67,11 @@ return {
 				mode = "n",
 				key = "gp",
 				fn = diag.goto_prev,
+			},
+			{
+				mode = "n",
+				key = "gg",
+				fn = diag.setqflist, -- open all diagnostics
 			},
 			{
 				mode = "n",

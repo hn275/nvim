@@ -51,14 +51,17 @@ return {
 					if cmp.visible() then
 						cmp.confirm({ select = true })
 						return
+					else
+						fallback()
 					end
 
-					-- check backspace
+					--[[ check backspace
 					local col = vim.fn.col(".") - 1
 					local backspace = col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 					if backspace then
 						fallback()
 					end
+					]]
 				end, { "i", "s" }),
 				["<C-j>"] = cmp.mapping(function(fallback)
 					if luasnip.jumpable(1) then
@@ -115,7 +118,7 @@ return {
 				{ name = "nvim_lsp_signature_help" },
 				{ name = "luasnip" },
 				{ name = "path" },
-				{ name = "buffer", keyword_length = 3 },
+				{ name = "buffer",                 keyword_length = 3 },
 			}),
 
 			confirm_opts = {
