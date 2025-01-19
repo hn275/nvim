@@ -70,7 +70,7 @@ return {
 			},
 			{
 				mode = "n",
-				key = "gg",
+				key = "gD",
 				fn = diag.setqflist, -- open all diagnostics
 			},
 			{
