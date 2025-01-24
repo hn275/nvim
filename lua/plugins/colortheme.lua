@@ -1,12 +1,64 @@
-    -- "lewpoly/sherbet.nvim",
 return {
-    "navarasu/onedark.nvim",
-    config = function()
-        local colortheme = require("onedark")
-        colortheme.setup({
-            style = "darker",
-        })
-        colortheme.load()
+	"rebelot/kanagawa.nvim",
+	config = function()
+		-- Default options:
+		require("kanagawa").setup({
+			compile = true, -- enable compiling the colorscheme
+			undercurl = true, -- enable undercurls
+			commentStyle = { italic = true },
+			functionStyle = {},
+			keywordStyle = { italic = true },
+			statementStyle = { bold = true },
+			typeStyle = {},
+			transparent = false, -- do not set background color
+			dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+			terminalColors = true, -- define vim.g.terminal_color_{0,17}
+			colors = { -- add/modify theme and palette colors
+				palette = {},
+				theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+			},
+			overrides = function(colors) -- add/modify highlights
+				return {}
+			end,
+			theme = "lotus", -- Load "wave" theme when 'background' option is not set
+			background = {},
+		})
+
+		-- setup must be called before loading
+		vim.cmd("colorscheme kanagawa")
+	end,
+}
+
+--[[
+return {
+	"uloco/bluloco.nvim",
+	lazy = false,
+	priority = 1000,
+	dependencies = { "rktjmp/lush.nvim" },
+	config = function()
+		-- your optional config goes here, see below.
+		require("bluloco").setup({
+			style = "dark", -- "auto" | "dark" | "light"
+			transparent = false,
+			italics = true,
+			terminal = vim.fn.has("gui_running") == 1, -- bluoco colors are enabled in gui terminals per default.
+			guicursor = true,
+		})
+
+		vim.opt.termguicolors = true
+		vim.cmd("colorscheme bluloco")
+	end,
+}
+
+	-- "lewpoly/sherbet.nvim",
+return {
+	"navarasu/onedark.nvim",
+	config = function()
+		local colortheme = require("onedark")
+		colortheme.setup({
+			style = "darker",
+		})
+		colortheme.load()
 
 		-- color themes for cmp
 		vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#282C34", fg = "NONE" })
@@ -49,5 +101,6 @@ return {
 		vim.api.nvim_set_hl(0, "CmpItemKindInterface", { fg = "#D8EEEB", bg = "#58B5A8" })
 		vim.api.nvim_set_hl(0, "CmpItemKindColor", { fg = "#D8EEEB", bg = "#58B5A8" })
 		vim.api.nvim_set_hl(0, "CmpItemKindTypeParameter", { fg = "#D8EEEB", bg = "#58B5A8" })
-    end,
+	end,
 }
+--]]
