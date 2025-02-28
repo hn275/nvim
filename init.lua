@@ -50,6 +50,7 @@ require("user.keybinds")
 require("user.filetypes")
 require("user.formatter")
 require("user.fold")
+require("user.tabline")
 
 -- Plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
