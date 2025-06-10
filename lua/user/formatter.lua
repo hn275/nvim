@@ -6,7 +6,7 @@ local fmt_on = function()
 		callback = function()
 			vim.lsp.buf.format({
 				async = false,
-				quiet = true,
+				quiet = false,
 			})
 		end,
 	})

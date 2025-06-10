@@ -137,6 +137,7 @@ return {
 			},
 		})
 
-		lspconfig.htmx.setup({})
+		-- lspconfig.htmx.setup({})
+		-- lspconfig.prettierd.setup({})
 	end,
 }

@@ -20,10 +20,13 @@ return {
 				format.goimports,
 				format.prettierd,
 				format.shfmt,
-				format.black, -- python formatter
+				format.black,
+				format.typstfmt,
 
 				diagnostics.actionlint,
 				diagnostics.golangci_lint,
+
+				hover.printenv,
 			},
 		})
 	end,
