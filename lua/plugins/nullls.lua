@@ -18,7 +18,7 @@ return {
 				}),
 				format.gofmt,
 				format.goimports,
-				format.prettier,
+				format.prettierd,
 				format.shfmt,
 				format.black, -- python formatter
 
