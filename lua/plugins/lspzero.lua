@@ -9,20 +9,29 @@ return {
 	config = function()
 		local lsp_zero = require("lsp-zero")
 
+		local servers = {
+			"bashls",
+			"clangd",
+			"pyright",
+			"rust_analyzer",
+			"gopls",
+			"ts_ls",
+			"tinymist",
+			"lua_ls",
+			"emmet_language_server",
+		}
+
 		require("mason").setup()
 		require("mason-lspconfig").setup({
-			ensure_installed = {
-				"jsonnet_ls",
-				"bashls",
-				"clangd",
-				"pyright",
-				"rust_analyzer",
-				"gopls",
-			},
+			ensure_installed = servers,
 			handlers = {
 				lsp_zero.default_setup,
 			},
 		})
+
+		for _, server in ipairs(servers) do
+			vim.lsp.enable(server)
+		end
 
 		-- keybindings
 		local lsp = vim.lsp.buf
@@ -61,12 +70,16 @@ return {
 			{
 				mode = "n",
 				key = "gn",
-				fn = diag.goto_next,
+				fn = function()
+					diag.jump({ count = 1, float = true })
+				end,
 			},
 			{
 				mode = "n",
 				key = "gp",
-				fn = diag.goto_prev,
+				fn = function()
+					diag.jump({ count = -1, float = true })
+				end,
 			},
 			{
 				mode = "n",
@@ -88,8 +101,7 @@ return {
 		end)
 
 		-- lua lsp has to be configed this way to get global vim api
-		local lspconfig = require("lspconfig")
-		lspconfig.lua_ls.setup({
+		vim.lsp.config("lua_ls", {
 			settings = {
 				Lua = {
 					runtime = {
@@ -116,13 +128,13 @@ return {
 			},
 		})
 
-		lspconfig.clangd.setup({
+		vim.lsp.config("clangd", {
 			capabilities = {
 				offsetEncoding = "utf-8",
 			},
 		})
 
-		lspconfig.rust_analyzer.setup({
+		vim.lsp.config("rust_analyzer", {
 			-- Other Configs ...
 			on_attach = function(client, bufnr)
 				vim.lsp.inlay_hint.enable(false, { bufnr = bufnr })
@@ -136,8 +148,5 @@ return {
 				},
 			},
 		})
-
-		-- lspconfig.htmx.setup({})
-		-- lspconfig.prettierd.setup({})
 	end,
 }

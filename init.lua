@@ -48,9 +48,7 @@ set colorcolumn=80
 vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 require("user.keybinds")
 require("user.filetypes")
-require("user.formatter")
 require("user.fold")
-require("user.tabline")
 
 -- Plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
