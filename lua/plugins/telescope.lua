@@ -1,6 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	dependencies = { "nvim-lua/plenary.nvim"},
+	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
 		local has_telescope, telescope = pcall(require, "telescope")
 
@@ -11,7 +11,7 @@ return {
 
 		local actions = require("telescope.actions")
 
-		THEME = "ivy"
+		THEME = "dropdown"
 
 		telescope.setup({
 			defaults = {
@@ -41,6 +41,9 @@ return {
 				border = true,
 			},
 			pickers = {
+				commands = {
+					theme = THEME,
+				},
 				live_grep = {
 					theme = THEME,
 				},
@@ -62,10 +65,9 @@ return {
 			extensions = {},
 		})
 
-
 		local t = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>ff", t.find_files)
 		vim.keymap.set("n", "<leader>fg", t.live_grep)
-		vim.keymap.set("n", "<leader>fb", t.buffers)
+		vim.keymap.set("n", "<leader>fd", t.diagnostics)
 	end,
 }
