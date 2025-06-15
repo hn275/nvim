@@ -39,13 +39,13 @@ return {
 		}
 
 		-- Set highlight groups using One Dark theme colors
-		-- vim.api.nvim_set_hl(0, "PmenuSel", { bg = colors.bg3, fg = "NONE" })
-		-- vim.api.nvim_set_hl(0, "Pmenu", { fg = colors.fg, bg = colors.black })
-		-- vim.api.nvim_set_hl(0, "TabLineSel", { bg = colors.blue, fg = colors.bg0, bold = true })
-		-- vim.api.nvim_set_hl(0, "TabLine", { bg = colors.subtle, fg = colors.fg })
-		-- vim.api.nvim_set_hl(0, "TabLineFill", { bg = colors.black, fg = colors.fg })
-		-- vim.api.nvim_set_hl(0, "TabLineModified", { fg = colors.red, bg = colors.bg0 })
-		-- vim.api.nvim_set_hl(0, "TabLineModifiedSel", { fg = colors.yellow, bg = colors.blue, bold = true })
+		vim.api.nvim_set_hl(0, "PmenuSel", { bg = colors.bg3, fg = "NONE" })
+		vim.api.nvim_set_hl(0, "Pmenu", { fg = colors.fg, bg = colors.black })
+		vim.api.nvim_set_hl(0, "TabLineSel", { bg = colors.blue, fg = colors.bg0, bold = true })
+		vim.api.nvim_set_hl(0, "TabLine", { bg = colors.subtle, fg = colors.fg })
+		vim.api.nvim_set_hl(0, "TabLineFill", { bg = colors.black, fg = colors.fg })
+		vim.api.nvim_set_hl(0, "TabLineModified", { fg = colors.red, bg = colors.bg0 })
+		vim.api.nvim_set_hl(0, "TabLineModifiedSel", { fg = colors.yellow, bg = colors.blue, bold = true })
 
 		-- color themes for cmp
 		vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { fg = "#7E8294", bg = "NONE", strikethrough = true })
