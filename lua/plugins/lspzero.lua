@@ -148,7 +148,5 @@ return {
 				},
 			},
 		})
-
-		vim.lsp.config("ts_ls", {})
 	end,
 }

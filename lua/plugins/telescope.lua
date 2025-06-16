@@ -11,7 +11,7 @@ return {
 
 		local actions = require("telescope.actions")
 
-		THEME = "dropdown"
+		THEME = "ivy"
 
 		telescope.setup({
 			defaults = {
@@ -69,5 +69,6 @@ return {
 		vim.keymap.set("n", "<leader>ff", t.find_files)
 		vim.keymap.set("n", "<leader>fg", t.live_grep)
 		vim.keymap.set("n", "<leader>fd", t.diagnostics)
+		vim.keymap.set("n", "<leader>ft", "<CMD>Telescope builtin<CR>")
 	end,
 }

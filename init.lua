@@ -1,7 +1,7 @@
 -- Basic vim stuff
 vim.o.backup = false
 vim.o.clipboard = "unnamedplus" -- allow accessing the clipboard for neovim
-vim.o.conceallevel = 0 -- making `` visible in markdown files
+vim.o.conceallevel = 2 -- making `` visible in markdown files
 vim.o.fileencoding = "utf-8"
 vim.o.hlsearch = false -- highlight all matched search
 vim.o.ignorecase = true -- ignore case in search pattern
@@ -33,7 +33,7 @@ vim.o.signcolumn = "yes:1" -- show sign column when there is a sign
 vim.o.foldmethod = "manual" -- setting fold method
 vim.o.foldcolumn = "1" -- dedicated column for fold symbols
 vim.o.foldlevelstart = 999 -- always open all folds when entering a file
-vim.o.laststatus = 0
+vim.o.laststatus = 1
 vim.o.showtabline = 2
 vim.o.compatible = false
 -- vim.o.mouse = ""
@@ -47,8 +47,6 @@ set colorcolumn=80
 
 vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 require("user.keybinds")
-require("user.filetypes")
-require("user.scripts")
 require("user.fold")
 
 -- Plugins
@@ -68,7 +66,16 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "typst",
+	pattern = {
+		"typst",
+		"javascript",
+		"typescript",
+		"javascriptreact",
+		"typescriptreact",
+		"html",
+		"css",
+		"scss",
+	},
 	callback = function()
 		vim.opt_local.tabstop = 2
 		vim.opt_local.shiftwidth = 2

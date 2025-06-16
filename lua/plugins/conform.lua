@@ -1,7 +1,6 @@
 return {
 	"stevearc/conform.nvim",
 	config = function()
-		local format_on_save = true
 		local conform = require("conform")
 
 		local format_on_save = nil
@@ -28,7 +27,6 @@ return {
 
 		fmt_on()
 
-		-- fmt_on()
 		vim.api.nvim_create_user_command("AutoFmt", fmt_on_save, {})
 
 		local options = {
@@ -45,6 +43,7 @@ return {
 				go = { "gofmt", "goimports" },
 				typst = { "typstyle" },
 				sh = { "shfmt" },
+				markdown = { "mdformat" },
 			},
 
 			formatters = {
