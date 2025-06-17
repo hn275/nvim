@@ -47,22 +47,6 @@ return {
 					i = cmp.mapping.abort(),
 					c = cmp.mapping.close(),
 				}),
-				["<TAB>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.confirm({ select = true })
-						return
-					else
-						fallback()
-					end
-
-					--[[ check backspace
-					local col = vim.fn.col(".") - 1
-					local backspace = col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
-					if backspace then
-						fallback()
-					end
-					]]
-				end, { "i", "s" }),
 				["<C-j>"] = cmp.mapping(function(fallback)
 					if luasnip.jumpable(1) then
 						luasnip.jump(1)
