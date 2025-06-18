@@ -79,6 +79,13 @@ return {
 						callback()
 					end
 				end, { "i" }),
+				["<CR>"] = cmp.mapping(function(callback)
+					if cmp.visible() then
+						cmp.confirm({ select = true })
+					else
+						callback()
+					end
+				end),
 			},
 
 			matching = {
