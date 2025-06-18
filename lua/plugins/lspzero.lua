@@ -72,13 +72,13 @@ end
 local SERVERS = {
 	"bashls",
 	"clangd",
-	"pyright",
 	"rust_analyzer",
 	"gopls",
 	"ts_ls",
 	"tinymist",
 	"lua_ls",
 	"emmet_language_server",
+	"pylsp",
 }
 
 return {
