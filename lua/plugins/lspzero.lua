@@ -79,6 +79,7 @@ local SERVERS = {
 	"lua_ls",
 	"emmet_language_server",
 	"pylsp",
+	"htmx",
 }
 
 return {

@@ -44,6 +44,7 @@ return {
 				typst = { "typstyle" },
 				sh = { "shfmt" },
 				markdown = { "mdformat" },
+				rust = { "rustfmt" },
 			},
 
 			formatters = {
