@@ -80,6 +80,9 @@ local SERVERS = {
 	"emmet_language_server",
 	"pylsp",
 	"htmx",
+	"taplo",
+	"docker_compose_language_service",
+	"dockerls",
 }
 
 return {

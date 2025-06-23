@@ -45,6 +45,7 @@ return {
 				sh = { "shfmt" },
 				markdown = { "mdformat" },
 				rust = { "rustfmt" },
+				toml = { "taplo" },
 			},
 
 			formatters = {
