@@ -7,6 +7,5 @@ return {
 			render = "default",
 			stages = "static",
 		})
-		vim.notify = notify
 	end,
 }
