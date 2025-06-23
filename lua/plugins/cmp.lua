@@ -7,35 +7,25 @@ return {
 		"hrsh7th/cmp-path",
 		"hrsh7th/nvim-cmp",
 		"hrsh7th/cmp-nvim-lsp-signature-help",
-		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 		"onsails/lspkind.nvim",
 	},
 
 	config = function()
-		local cmp_status_ok, cmp = pcall(require, "cmp")
-		local luasnip_ok, luasnip = pcall(require, "luasnip")
-		local lspkind_ok, lspkind = pcall(require, "lspkind")
-
-		if not cmp_status_ok or not luasnip_ok or not lspkind_ok then
-			return
-		end
+		local cmp = require("cmp")
+		local lspkind = require("lspkind")
 
 		-- cmp setup
 		cmp.setup({
-			snippet = {
-				expand = function(args)
-					luasnip.lsp_expand(args.body)
-				end,
-			},
-
 			window = {
 				completion = {
-					winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
 					col_offset = 0,
-					side_padding = 0,
+					side_padding = 1,
 				},
-				documentation = cmp.config.window.bordered(),
+				documentation = {
+					col_offset = 0,
+					side_padding = 1,
+				},
 			},
 
 			mapping = {
@@ -47,39 +37,28 @@ return {
 					i = cmp.mapping.abort(),
 					c = cmp.mapping.close(),
 				}),
-				["<C-j>"] = cmp.mapping(function(fallback)
-					if luasnip.jumpable(1) then
-						luasnip.jump(1)
-					else
-						fallback()
-					end
-				end, { "i" }),
-				["<C-k>"] = cmp.mapping(function(fallback)
-					if luasnip.jumpable(-1) then
-						luasnip.jump(-1)
-					else
-						fallback()
-					end
-				end, { "i" }),
 				["<C-n>"] = cmp.mapping(function(callback)
-					if luasnip.choice_active() then
-						luasnip.change_choice(1)
-					elseif cmp.visible() then
+					if cmp.visible() then
 						cmp.select_next_item()
 					else
 						callback()
 					end
 				end, { "i" }),
 				["<C-p>"] = cmp.mapping(function(callback)
-					if luasnip.choice_active() then
-						luasnip.change_choice(-1)
-					elseif cmp.visible() then
+					if cmp.visible() then
 						cmp.select_prev_item()
 					else
 						callback()
 					end
 				end, { "i" }),
 				["<CR>"] = cmp.mapping(function(callback)
+					if cmp.visible() then
+						cmp.confirm({ select = true })
+					else
+						callback()
+					end
+				end),
+				["<Tab>"] = cmp.mapping(function(callback)
 					if cmp.visible() then
 						cmp.confirm({ select = true })
 					else
@@ -105,22 +84,14 @@ return {
 			},
 
 			sources = cmp.config.sources({
-				{ name = "luasnip" },
+				{ name = "nvim_lsp_signature_help" },
 				{ name = "nvim_lsp" },
-				-- { name = "nvim_lsp_signature_help" },
 				{ name = "path" },
 				{
 					name = "buffer",
 					keyword_length = 3,
 				},
 			}),
-
-			confirm_opts = {
-				behavior = cmp.ConfirmBehavior.Replace,
-				select = false,
-			},
-
-			ghost_text = { enable = false },
 		})
 	end,
 }
