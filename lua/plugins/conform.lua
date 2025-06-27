@@ -47,6 +47,7 @@ return {
 				rust = { "rustfmt" },
 				toml = { "taplo" },
 				http = { "kulala-fmt" },
+				json = { "jq" },
 			},
 
 			formatters = {
