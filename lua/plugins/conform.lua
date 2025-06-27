@@ -46,6 +46,7 @@ return {
 				markdown = { "mdformat" },
 				rust = { "rustfmt" },
 				toml = { "taplo" },
+				http = { "kulala-fmt" },
 			},
 
 			formatters = {
