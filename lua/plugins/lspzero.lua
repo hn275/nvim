@@ -83,6 +83,7 @@ local SERVERS = {
 	"taplo",
 	"docker_compose_language_service",
 	"dockerls",
+	"sqls",
 }
 
 return {
