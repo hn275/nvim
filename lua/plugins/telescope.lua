@@ -70,5 +70,6 @@ return {
 		vim.keymap.set("n", "<leader>fg", t.live_grep)
 		vim.keymap.set("n", "<leader>fd", t.diagnostics)
 		vim.keymap.set("n", "<leader>ft", "<CMD>Telescope builtin<CR>")
+		vim.keymap.set("n", "<leader>fb", "<CMD>Telescope buffers<CR>")
 	end,
 }
