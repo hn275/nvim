@@ -1,35 +1,37 @@
 return {
-	"navarasu/onedark.nvim",
-	priority = 1000, -- make sure to load this before all the other start plugins
+	"everviolet/nvim",
+	name = "evergarden",
+	priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
 	config = function()
-		local onedark = require("onedark")
-
-		onedark.setup({
-			style = "darker",
+		require("evergarden").setup({
+			theme = {
+				variant = "winter", -- 'winter'|'fall'|'spring'|'summer'
+				accent = "green",
+			},
+			editor = {
+				transparent_background = false,
+				override_terminal = true,
+				sign = { color = "none" },
+				float = {
+					color = "mantle",
+					invert_border = false,
+				},
+				completion = {
+					color = "surface0",
+				},
+			},
+			style = {
+				tabline = { "reverse" },
+				search = { "italic", "reverse" },
+				incsearch = { "italic", "reverse" },
+				types = { "italic" },
+				keyword = { "italic" },
+				comment = { "italic" },
+			},
+			overrides = {},
+			color_overrides = {},
 		})
 
-		onedark.load()
-
-		-- One Dark colors
-		local colors = {
-			bg = "#282c34",
-			fg = "#abb2bf",
-			blue = "#61afef",
-			cyan = "#56b6c2",
-			green = "#98c379",
-			purple = "#c678dd",
-			red = "#e06c75",
-			yellow = "#e5c07b",
-			orange = "#d19a66",
-			gray = "#5c6370",
-			dark_gray = "#2c323c",
-			light_gray = "#3e4452",
-		}
-
-		-- Popup menu highlighting
-		vim.api.nvim_set_hl(0, "Pmenu", { bg = colors.dark_gray, fg = colors.fg })
-		vim.api.nvim_set_hl(0, "PmenuSel", { bg = colors.blue, fg = colors.bg, bold = true })
-		vim.api.nvim_set_hl(0, "PmenuSbar", { bg = colors.light_gray })
-		vim.api.nvim_set_hl(0, "PmenuThumb", { bg = colors.gray })
+		vim.cmd([[colorscheme evergarden]])
 	end,
 }

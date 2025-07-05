@@ -40,7 +40,7 @@ return {
 				typescriptreact = { "prettierd", "prettier", stop_after_first = true },
 				python = { "black" },
 				cpp = { "clang-format" },
-				go = { "gofmt", "goimports" },
+				go = { "gofmt", "goimports", "golines" }, -- being formatted by `go.nvim`
 				typst = { "typstyle" },
 				sh = { "shfmt" },
 				markdown = { "mdformat" },
@@ -55,6 +55,9 @@ return {
 					extra_args = {
 						"-style=file:" .. vim.fn.expand("~/.clang-format"),
 					},
+				},
+				golines = {
+					prepend_args = { "-m", "80", "-t", "4" },
 				},
 			},
 		}
