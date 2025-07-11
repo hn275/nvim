@@ -48,6 +48,7 @@ return {
 				toml = { "taplo" },
 				http = { "kulala-fmt" },
 				json = { "jq" },
+				yaml = {"yamlfmt"},
 			},
 
 			formatters = {
