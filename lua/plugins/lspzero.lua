@@ -15,7 +15,7 @@ local KEY_BINDS = {
 	},
 	{
 		mode = "n",
-		key = "ga",
+		key = "g.",
 		fn = lsp.code_action,
 	},
 	{
