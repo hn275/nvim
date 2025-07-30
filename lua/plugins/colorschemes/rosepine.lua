@@ -4,6 +4,9 @@ return {
 	config = function()
 		require("rose-pine").setup({
 			variant = "main",
+			styles = {
+				italic = false,
+			},
 		})
 	end,
 }

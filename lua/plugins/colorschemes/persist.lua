@@ -4,7 +4,7 @@ return {
 	lazy = false,
 	config = function()
 		require("telescope-colorscheme-persist").setup({
-			keybind = "<C-k><C-t>",
+			keybind = "<C-t><C-k>",
 		})
 	end,
 }
